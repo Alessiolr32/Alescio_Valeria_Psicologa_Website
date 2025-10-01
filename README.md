@@ -24,6 +24,12 @@ Ho sviluppato il progetto in **HTML, CSS e JavaScript**, con un approccio voluta
 
 ---
 
+## 👤 Autore  
+
+Sviluppato da Alessio La Rosa su commissione.
+
+---
+
 ## ⚙️ Installazione / Uso  
 
 Il progetto è statico e non richiede configurazioni particolari.  
@@ -37,15 +43,3 @@ cd <repo name>
 
 # Aprire index.html nel browser
 
----
-
-👤 Autore
-
-Sviluppato da Alessio La Rosa su commissione.
-
----
-
-
-📄 Licenza
-
-Questo progetto è rilasciato sotto licenza MIT.
