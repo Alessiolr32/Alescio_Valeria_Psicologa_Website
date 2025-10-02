@@ -1,7 +1,7 @@
-# 🌿 Psicologa Alescio Valeria Website
+# 🌿 Professional Website
 
 ## 📌 Descrizione  
-Sito web commissionato e realizzato da me per una **psicologa professionista**.  
+Sito web prototipo e realizzato da me per una **figura professionale**.  
 Ho sviluppato il progetto in **HTML, CSS e JavaScript**, con un approccio volutamente **leggero e minimale**, in modo da garantire **semplicità, velocità di caricamento e accessibilità** da qualsiasi dispositivo.  
 
 ---
