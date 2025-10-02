@@ -26,7 +26,7 @@ Ho sviluppato il progetto in **HTML, CSS e JavaScript**, con un approccio voluta
 
 ## 👤 Autore  
 
-Sviluppato da Alessio La Rosa su commissione.
+Sviluppato da Alessio La Rosa.
 
 ---
 
