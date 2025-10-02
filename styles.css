@@ -1,25 +1,43 @@
+/* =======================
+   Variabili principali
+======================= */
 :root {
     --bg: #fbfbfb;
-    --card: #ffffff;
+    --card: #fff9f7;
+    /* sfondo leggermente caldo */
+    --primary-color: #8D2319;
+    /* rosso scuro */
+    --secondary-color: #f5f5f5;
+    /* sfondo card secondario */
+    --text-color-dark: #111827;
+    --text-color-light: #555;
     --max-w: 1000px;
     --gap: 24px;
-    font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+
+    --font-base: 0.95rem;
+    --font-small: 0.85rem;
+    --font-large: 1.6rem;
+    --font-xlarge: 2rem;
+
+    --radius: 16px;
 }
 
+/* =======================
+   Reset e globali
+======================= */
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
-html, body {
-    height: 100%
-}
-
+html,
 body {
+    height: 100%;
     margin: 0;
-    font-family: var(--font-family);
+    font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     background: var(--bg);
-    color: #111827;
+    color: var(--text-color-dark);
     line-height: 1.55;
+    scroll-behavior: smooth;
 }
 
 .wrap {
@@ -28,126 +46,155 @@ body {
     padding: 40px 20px 10px 20px;
 }
 
+/* =======================
+   Header
+======================= */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--gap);
-    margin-bottom: 28px; 
+    margin-bottom: 28px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px
+    gap: 12px;
 }
 
 .logo img {
     height: 50px;
-    width: auto
+    width: auto;
+    border-radius: 50%;
 }
 
 .brand {
     font-weight: 700;
-    font-size: 1.05rem
+    font-size: 1.05rem;
 }
 
 .role {
     font-size: 0.88rem;
+    color: var(--text-color-light);
 }
 
 nav {
     display: flex;
     gap: 18px;
-    align-items: center
+    align-items: center;
 }
 
 nav a {
     text-decoration: none;
-    font-weight: 600
+    font-weight: 600;
+    color: var(--text-color-dark);
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
 nav a:hover {
-    color: rgb(0, 0, 0);
-    transform: scale(1.02);
+    color: var(--primary-color);
+    transform: scale(1.01);
 }
 
+/* =======================
+   Main layout
+======================= */
 main {
     display: grid;
     grid-template-columns: 1fr 360px;
     gap: 28px;
-    align-items: start
+    align-items: start;
 }
 
 .card {
     background: var(--card);
     border-radius: var(--radius);
     padding: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .section-card {
     padding: 36px 28px;
     display: flex;
     flex-direction: column;
-    gap: 12px
+    gap: 12px;
 }
 
 .section-card h1 {
     margin: 0;
-    font-size: 1.6rem
+    font-size: var(--font-large);
+    color: var(--primary-color);
 }
 
 .traitments {
     margin-top: 18px;
-    color: #334155
+    color: #334155;
 }
 
+.traitments p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+/* =======================
+   Servizi
+======================= */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    gap: 18px;
     margin-top: 18px;
     align-items: stretch;
 }
 
 .service {
-    border-radius: 16px;
-    padding: 14px;
-    background: linear-gradient(180deg, #fbffff, #ffffff);
-    border: 1px solid #00000019;
+    border-radius: var(--radius);
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid #e3dcdc;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .service:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #fff5f2;
 }
 
 .service h4 {
     margin: 0 0 6px 0;
-    font-size: 0.98rem
+    font-size: 1rem;
+    color: var(--primary-color);
 }
 
 .service p {
     margin: 0;
-    font-size: 0.93rem
+    font-size: var(--font-base);
+    color: var(--text-color-light);
 }
 
+/* =======================
+   Contatti
+======================= */
 aside .contact-box {
     display: flex;
     flex-direction: column;
-    gap: 10px
-}
-
-.contact-box h3 {
-    margin: 0
+    gap: 12px;
 }
 
 .meta {
-    font-size: 0.95rem
+    font-size: 0.95rem;
 }
 
 .meta a {
@@ -156,43 +203,17 @@ aside .contact-box {
     text-overflow: ellipsis;
     display: inline-block;
     max-width: 100%;
+    color: var(--text-color-dark);
+    transition: color 0.25s ease;
 }
 
-footer {
-    margin-top: 26px;
-    text-align: center;
-    font-size: 0.88rem
-}
-
-@media (max-width:940px) {
-    main {
-        grid-template-columns: 1fr
-    }
-    
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px
-    }
-    
-    nav {
-        order: 2
-    }
-}
-
-.banner-section {
-    height: 40vh;
-    border-radius: 16px;
-    background: url('/img/banner.jpeg') center / contain no-repeat;
-    background-color: #FDFDDB;
-}
-
-.text-color {
-    color: #8D2319;
+.meta a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
 .btn-telephone {
-    background-color: #8D2319;
+    background-color: var(--primary-color);
     color: #ffffff;
     border: none;
     font-size: 1rem;
@@ -200,13 +221,25 @@ footer {
     text-decoration: none;
     display: inline-block;
     text-align: center;
-}
-.btn-telephone:hover {
-    background-color: #7a0b01;
-    color: #ffffff;
-    transition: background-color 0.2s ease;
+    transition: all 0.25s ease-in-out;
 }
 
+.btn-telephone:hover {
+    background-color: #7a0b01;
+}
+
+/* =======================
+   Banner
+======================= */
+.banner-section {
+    height: 40vh;
+    border-radius: var(--radius);
+    background: url('/img/banner.jpeg') center / cover no-repeat;
+}
+
+/* =======================
+   Chi siamo
+======================= */
 .chiSono {
     background-image: url('./img/bg-chi-sono.jpeg');
     background-size: cover;
@@ -214,13 +247,25 @@ footer {
     background-repeat: no-repeat;
     color: #fff;
     position: relative;
-    padding: 15px 15px;
-    border-radius: 16px;
+    padding: 20px;
+    border-radius: var(--radius);
     text-align: center;
 }
 
-html {
-    scroll-behavior: smooth;
+.chiSono img {
+    max-width: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =======================
+   Footer e scroll top
+======================= */
+footer {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--text-color-light);
 }
 
 .top-button-up {
@@ -234,36 +279,32 @@ html {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    background-color: #8D2319;
+    background-color: var(--primary-color);
     color: #ffffff;
-    transition: background-color 0.1s ease, transform 0.1s ease;
+    transition: all 0.25s ease-in-out;
+    border-radius: 50%;
 }
 
 .top-button-up:hover {
-    background-color: #5b0a03;
-    color: #ffffff;
-    transition: background-color 0.1s ease;
-    transform: scale(1.02);
+    background-color: #7a0b01;
+    transform: scale(1.01);
 }
 
-.translate-effect {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.translate-effect:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
+/* =======================
+   Link preview
+======================= */
 .link-preview {
     text-decoration: none;
     color: inherit;
-    background: linear-gradient(180deg, #fbffff, #ffffff);
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 12px;
+    display: block;
+    transition: background 0.25s ease;
 }
 
 .preview-box:hover {
     background-color: #f8f9fa;
-    transition: 0.2s;
 }
 
 .preview-icon {
@@ -272,3 +313,32 @@ html {
     object-fit: contain;
 }
 
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 940px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    nav {
+        order: 2;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
